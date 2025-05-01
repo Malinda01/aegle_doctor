@@ -8,6 +8,10 @@ import Profile from "./pages/Profile";
 import Account from "./pages/Account";
 import WelcomePage from "./components/WelcomePage";
 import Home from "./pages/Home";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import ViewAppointments from "./pages/ViewAppointments";
+import ViewCommision from "./pages/ViewCommision";
+import VideoConference from "./pages/VideoConference";
 
 function App() {
   const [patientName, setPatientName] = useState("");
@@ -36,7 +40,13 @@ function App() {
             <Route path="/login" element={<Login onLogin={handleLogin} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/account" element={<Account />} />{" "}
+            <Route path="/account" element={<Account />} />
+            <Route path="/ViewAppointments" element={<ViewAppointments />} />
+            <Route path="/ViewCommision" element={<ViewCommision />} />
+            <Route
+              path="/VideoConference/:patientId"
+              element={<VideoConference />}
+            />
           </Routes>
         </div>
         <Footer />

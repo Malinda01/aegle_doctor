@@ -10,10 +10,6 @@ function Header() {
     navigate(path);
   };
 
-  const toggleLanguageDropdown = () => {
-    setShowLanguageDropdown(!showLanguageDropdown);
-  };
-
   // Check if the current page is Login, Register, or WelcomePage
   const isSimplifiedHeader =
     location.pathname === "/" ||
@@ -22,8 +18,12 @@ function Header() {
 
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-dark bg-primary shadow d-flex justify-content-center align-items-center"
-      style={{ padding: "0.25rem 1rem" }}
+      className="navbar navbar-expand-lg navbar-dark shadow d-flex justify-content-center align-items-center"
+      style={{
+        padding: "0.25rem 1rem",
+        height: "130px",
+        backgroundColor: "#31afd4",
+      }}
     >
       <div className="container d-flex justify-content-between align-items-center">
         <div
@@ -33,7 +33,7 @@ function Header() {
           <img
             src="https://cdn-icons-png.flaticon.com/128/6512/6512351.png"
             alt="Logo"
-            className="me-2 rounded-circle"
+            className="me-3 rounded-circle align-items-start"
             style={{ height: "100%" }} // Ensure the logo fits the header height
           />
           <span
@@ -48,74 +48,23 @@ function Header() {
             id="navbarNav"
           >
             <ul className="navbar-nav">
+              {/* View Appointment */}
               <li className="nav-item">
                 <button
-                  onClick={() => handleNavigation("/home")}
+                  onClick={() => handleNavigation("/ViewAppointments")}
                   className="btn btn-link text-white nav-link"
                 >
-                  Home
+                  View Appointment
                 </button>
               </li>
+              {/* View Commisions */}
               <li className="nav-item">
                 <button
-                  onClick={() => handleNavigation("/about")}
+                  onClick={() => handleNavigation("/ViewCommision")}
                   className="btn btn-link text-white nav-link"
                 >
-                  About
+                  View Commisions
                 </button>
-              </li>
-              <li className="nav-item">
-                <button
-                  onClick={() => handleNavigation("/services")}
-                  className="btn btn-link text-white nav-link"
-                >
-                  Services
-                </button>
-              </li>
-              <li className="nav-item">
-                <button
-                  onClick={() => handleNavigation("/profile")}
-                  className="btn btn-link text-white nav-link"
-                >
-                  Account
-                </button>
-              </li>
-              <li className="nav-item">
-                <button
-                  onClick={() => handleNavigation("/prescription")}
-                  className="btn btn-link text-white nav-link"
-                >
-                  Prescription
-                </button>
-              </li>
-              <li className="nav-item">
-                <button
-                  onClick={() => handleNavigation("/notifications")}
-                  className="btn btn-link text-white nav-link"
-                >
-                  Notifications
-                </button>
-              </li>
-              <li className="nav-item dropdown">
-                <button
-                  className="btn btn-link text-white nav-link dropdown-toggle"
-                  onClick={toggleLanguageDropdown}
-                >
-                  Language
-                </button>
-                {showLanguageDropdown && (
-                  <ul className="dropdown-menu show">
-                    <li>
-                      <button className="dropdown-item">Sinhala</button>
-                    </li>
-                    <li>
-                      <button className="dropdown-item">English</button>
-                    </li>
-                    <li>
-                      <button className="dropdown-item">Tamil</button>
-                    </li>
-                  </ul>
-                )}
               </li>
             </ul>
           </div>

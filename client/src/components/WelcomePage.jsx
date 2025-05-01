@@ -5,27 +5,35 @@ function WelcomePage() {
   const navigate = useNavigate();
 
   const handleRegister = () => {
-    navigate("/register"); // Navigate to the Register page
+    navigate("/register");
   };
 
   const handleLogin = () => {
-    navigate("/login"); // Navigate to the Login page
+    navigate("/login");
   };
 
   return (
     <div
-      className="d-flex justify-content-center align-items-start vh-100"
+      className="d-flex justify-content-center align-items-center min-vh-100 w-100"
       style={{
-        backgroundImage: 'url("https://via.placeholder.com/1920x1080")', // Replace with your image URL
+        backgroundImage: 'url("https://via.placeholder.com/1920x1080")',
         backgroundSize: "cover",
         backgroundPosition: "center",
-        paddingTop: "6rem", // Increase padding to move it slightly further down
+        height: "100vh", // Explicitly set height
+        margin: 0, // Remove default margins
       }}
     >
       <div
-        className="welcome-page container text-center p-5 shadow rounded bg-white"
-        style={{ maxWidth: "800px", padding: "3rem" }}
+        className="container text-center p-5 shadow rounded bg-white"
+        style={{ maxWidth: "800px" }}
       >
+        <h4
+          className="mb-1"
+          style={{ fontSize: "1rem", fontWeight: "", color: "#000000" }}
+        >
+          Doctor Platform
+        </h4>
+
         <h1
           className="mb-4"
           style={{ fontSize: "3rem", fontWeight: "bold", color: "#007bff" }}
@@ -36,17 +44,11 @@ function WelcomePage() {
           Your universal healthcare solution. Access healthcare services at your
           fingertips.
         </p>
-        <div className="d-flex justify-content-center">
-          <button
-            onClick={handleRegister}
-            className="btn btn-primary btn-lg me-3"
-          >
+        <div className="d-flex justify-content-center gap-3">
+          <button onClick={handleRegister} className="btn btn-primary btn-lg">
             Register
           </button>
-          <button
-            onClick={handleLogin}
-            className="btn btn-secondary btn-lg me-3"
-          >
+          <button onClick={handleLogin} className="btn btn-secondary btn-lg">
             Login
           </button>
         </div>

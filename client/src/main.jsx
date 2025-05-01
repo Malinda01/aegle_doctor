@@ -1,10 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+function ErrorBoundary({ children }) {
+  return (
+    <React.Suspense fallback={<div>Loading...</div>}>{children}</React.Suspense>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <ErrorBoundary>
     <App />
-  </StrictMode>,
-)
+  </ErrorBoundary>
+);
