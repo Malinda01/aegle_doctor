@@ -6,6 +6,6 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-app.listen(5174, () => {
+app.listen(5173, () => {
   console.log("server has started on 5000");
 });
